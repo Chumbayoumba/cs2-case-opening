@@ -52,10 +52,7 @@ export class UsersService {
       .select({
         id: caseOpenings.id,
         createdAt: caseOpenings.createdAt,
-        case: {
-          id: caseOpenings.caseId,
-          name: db.select({ name: items.name }).from(items).where(eq(items.id, caseOpenings.caseId)).limit(1),
-        },
+        caseId: caseOpenings.caseId,
         item: {
           id: items.id,
           name: items.name,
